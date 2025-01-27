@@ -1,0 +1,23 @@
+{
+    "users": [
+        {
+            "id": "1",
+            "idRole": "1",
+            "prenomUser": "Fatou",
+            "nomUser": "Keita",
+            "email": "fatou@gmail.com",
+            "password": "12345678",
+            "telephone": "11223344"
+        }
+    ],
+    "roles": [
+        {
+            "id": "1",
+            "nomRole": "Parent"
+        },
+        {
+            "id": "2",
+            "nomRole": "Enfant"
+        }
+    ]
+}

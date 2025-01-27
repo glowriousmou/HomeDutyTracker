@@ -1,0 +1,107 @@
+<!-- Section: Design Block -->
+<div class="">
+  <div>
+    <section
+      class="d-flex align-items-center justify-content-center vh-100"
+      style="background-color: hsl(0, 0%, 96%)"
+    >
+      <div class="px-4 py-5 px-md-5 text-center text-lg-start">
+        <div class="container">
+          <div class="row gx-lg-5 align-items-center">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+              <h1 class="titlePrimary title">
+                Home Duty
+                <span class="title titleSecondary">Tracker</span>
+              </h1>
+              <p class="contentText">
+                vous permet de gérer et de répartir les taches parmi les membres
+                de la famille. Chaque tache assignée suit une responsabilité
+                clairement définie avec des statuts de progression visibles.
+              </p>
+            </div>
+
+            <div class="col-lg-6 mb-5 mb-lg-0">
+              <div class="card">
+                <div class="card-body py-5 px-md-5">
+                  <form [formGroup]="loginForm">
+                    <!-- Email input -->
+                    <div data-mdb-input-init class="form-outline mb-4">
+                      <label class="form-label" for="form3Example3"
+                        >Email</label
+                      >
+                      <input
+                        type="email"
+                        id="email"
+                        class="form-control"
+                        formControlName="email"
+                        placeholder="Saisir l'adresse email"
+                      />
+                      <div
+                        *ngIf="emailControl?.touched && emailControl?.invalid"
+                        class="error"
+                      >
+                        <small *ngIf="emailControl?.errors?.['required']"
+                          >L'email est requis</small
+                        >
+                        <small *ngIf="emailControl?.errors?.['email']"
+                          >Adresse email invalide</small
+                        >
+                      </div>
+                    </div>
+
+                    <!-- Password input -->
+                    <div data-mdb-input-init class="form-outline mb-4">
+                      <label class="form-label" for="form3Example4"
+                        >Mot de passe</label
+                      >
+                      <input
+                        type="password"
+                        id="password"
+                        class="form-control"
+                        formControlName="password"
+                        placeholder="Saisir le mot de passe"
+                      />
+                      <div
+                        *ngIf="
+                          passwordControl?.touched && passwordControl?.invalid
+                        "
+                        class="error"
+                      >
+                        <small *ngIf="passwordControl?.errors?.['required']"
+                          >Le mot de passe est requis</small
+                        >
+                        <small *ngIf="passwordControl?.errors?.['minlength']">
+                          Le mot de passe doit avoir au moins 6 caractères
+                        </small>
+                      </div>
+                    </div>
+
+                    <div class="text-center">
+                      <div *ngIf="errorMsg" class="error mb-2">
+                        <small *ngIf="errorMsg">{{ errorMsg }}</small>
+                      </div>
+                      <button
+                        type="submit"
+                        data-mdb-button-init
+                        data-mdb-ripple-init
+                        class="btn mb-4 btnSubmitPrimary"
+                        [disabled]="loginForm.invalid"
+                        (click)="onSubmit()"
+                      >
+                        Se connecter
+                      </button>
+                    </div>
+                    <!-- Register buttons -->
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div>
+    <app-footer></app-footer>
+  </div>
+</div>
