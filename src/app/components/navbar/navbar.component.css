@@ -1,0 +1,81 @@
+/* .navbar-toggler {
+    border: none;
+    outline: none;
+} */
+
+/* Sidebar hidden by default */
+.sidebar-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background: #ffffff;
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    padding-top: 60px;
+    z-index: 1050;
+}
+
+/* Show sidebar when active */
+.show-sidebar {
+    transform: translateX(0);
+}
+
+/* Close button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+/* Overlay effect when sidebar is open */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1049;
+}
+
+.show-overlay {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Couleur de base du lien */
+.custom-nav-link {
+    color: #333;
+    /* Couleur de texte par défaut */
+    padding: 10px 15px;
+    /* Espacement */
+    border-radius: 5px;
+    /* Coins arrondis */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Effet hover */
+.custom-nav-link:hover {
+    background-color: var(--secondary-color);
+    /* Gris clair au survol */
+    color: white !important;
+    /* Bleu Bootstrap */
+}
+
+/* Effet active */
+.custom-nav-link.active {
+    background-color: var(--primary-color);
+    /* Bleu Bootstrap */
+    color: white !important;
+    font-weight: bold;
+}

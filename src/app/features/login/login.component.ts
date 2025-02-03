@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FooterComponent } from '@app/components/footer/footer.component';
 
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -10,7 +9,7 @@ import { DASHBOARD_PATH } from '@app/constants/routerPath';
 
 @Component({
   selector: 'app-login',
-  imports: [FooterComponent, ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })

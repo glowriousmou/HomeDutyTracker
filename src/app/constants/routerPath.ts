@@ -3,3 +3,6 @@ export const LOGOUT_PATH = "logout"
 
 export const DASHBOARD_PATH = "dashboard"
 export const NOT_FOUND_PATH = "notFound"
+export const LIST_USER_PATH = "listUser"
+export const LIST_ASSIGNATION_PATH = "listAssignation"
+export const SETTING_PATH = "settings"

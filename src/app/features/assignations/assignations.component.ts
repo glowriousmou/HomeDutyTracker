@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { NavbarComponent } from '@components/navbar/navbar.component';
 
 @Component({
-  selector: 'app-not-found',
+  selector: 'app-assignations',
   imports: [NavbarComponent],
-  templateUrl: './not-found.component.html',
-  styleUrl: './not-found.component.css'
+  templateUrl: './assignations.component.html',
+  styleUrl: './assignations.component.css'
 })
-export class NotFoundComponent {
+export class AssignationsComponent {
 
 }

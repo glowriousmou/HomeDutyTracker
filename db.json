@@ -19,5 +19,9 @@
             "id": "2",
             "nomRole": "Enfant"
         }
-    ]
+    ],
+    "assignation": [],
+    "validationAssignation": [],
+    "critereValidation": [],
+    "tache": []
 }
