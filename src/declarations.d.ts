@@ -1,4 +1,4 @@
-declare module 'mdb-ui-kit' {
+declare module 'family-chart' {
     const value: any;
     export default value;
 }

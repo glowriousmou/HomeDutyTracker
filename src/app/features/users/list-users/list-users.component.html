@@ -1,0 +1,128 @@
+<app-navbar></app-navbar>
+<div class="container mt-4">
+  <h2 class="text-centers title titleSecondary">La Famille SOW</h2>
+
+  <!-- Barre de recherche -->
+  <div class="datatable-input-group mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Rechercher un nom ou un email..."
+      [(ngModel)]="searchQuery"
+      (input)="filterTable()"
+    />
+    <span class="datatable-input-group-text">
+      <i class="bi bi-search"></i>
+    </span>
+  </div>
+
+  <!-- Tableau avec un design moderne -->
+  <div class="datatable-containers">
+    <ngx-datatable
+      class="bootstrap modern-table"
+      [rows]="filteredRows"
+      [columns]="[
+        { name: 'Nom', prop: 'name', sortable: true },
+        { name: 'Âge', prop: 'age', sortable: true },
+        { name: 'Email', prop: 'email', sortable: true }
+      ]"
+      [columnMode]="'force'"
+      [headerHeight]="50"
+      [rowHeight]="'auto'"
+      [footerHeight]="50"
+      [limit]="5"
+      [sortType]="sortType"
+      [scrollbarH]="true"
+      [selectionType]="selectionType"
+      [selected]="selected"
+      (select)="onSelect($event)"
+    >
+    </ngx-datatable>
+  </div>
+
+  <!-- Affichage de la ligne sélectionnée -->
+  <div *ngIf="selected.length > 0" class="alert alert-info mt-3">
+    <strong>Vous avez sélectionné :</strong> {{ selected[0].name }} ({{
+      selected[0].email
+    }})
+  </div>
+</div>
+<div class="container mt-4">
+  <input
+    type="text"
+    class="form-control mb-3"
+    placeholder="Rechercher..."
+    [(ngModel)]="searchQuery"
+    (input)="filterTable()"
+  />
+
+  <ngx-datatable
+    #myTable
+    class="bootstrap"
+    [rows]="filteredRows"
+    [columns]="[
+      { prop: 'name', name: 'Nom' },
+      { prop: 'title', name: 'Titre' },
+      { prop: 'status', name: 'Statut' },
+      { prop: 'position', name: 'Position' }
+    ]"
+    [columnMode]="'force'"
+    [headerHeight]="50"
+    [footerHeight]="50"
+    [rowHeight]="'auto'"
+    [limit]="5"
+    [sortType]="sortType"
+    [selectionType]="selectionType"
+    (select)="onSelect($event)"
+  >
+    <ngx-datatable-column name="Utilisateur">
+      <ng-template let-row="row" ngx-datatable-cell>
+        <div class="d-flex align-items-center">
+          <img
+            [src]="row.img"
+            class="rounded-circle me-2"
+            style="width: 45px; height: 45px"
+          />
+          <div>
+            <p class="fw-bold mb-1">{{ row.name }}</p>
+            <p class="text-muted mb-0">{{ row.email }}</p>
+          </div>
+        </div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Titre">
+      <ng-template let-row="row" ngx-datatable-cell>
+        <p class="fw-normal mb-1">{{ row.title }}</p>
+        <p class="text-muted mb-0">{{ row.department }}</p>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Statut">
+      <ng-template let-row="row" ngx-datatable-cell>
+        <span
+          class="badge rounded-pill"
+          [ngClass]="{
+            'badge-success': row.status === 'Active',
+            'badge-primary': row.status === 'Onboarding',
+            'badge-warning': row.status === 'Awaiting'
+          }"
+        >
+          {{ row.status }}
+        </span>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Position">
+      <ng-template let-row="row" ngx-datatable-cell>
+        {{ row.position }}
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Actions">
+      <ng-template let-row="row" ngx-datatable-cell>
+        <button class="btn btn-link btn-sm fw-bold">Modifier</button>
+      </ng-template>
+    </ngx-datatable-column>
+  </ngx-datatable>
+</div>

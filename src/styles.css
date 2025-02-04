@@ -82,3 +82,19 @@
     padding: 10px 0;
     z-index: 1000;
 }
+
+/* ngx-datatable.bootstrap {
+    border: 1px solid #dee2e6;
+}
+
+ngx-datatable.bootstrap .datatable-body-row:hover {
+    background-color: #f8f9fa !important;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    ngx-datatable {
+        overflow-x: auto;
+        display: block;
+    }
+} */

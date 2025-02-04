@@ -2,12 +2,57 @@
     "users": [
         {
             "id": "1",
-            "idRole": "1",
+            "idRole": "Parent",
             "prenomUser": "Fatou",
-            "nomUser": "Keita",
+            "nomUser": "SOW",
             "email": "fatou@gmail.com",
             "password": "12345678",
             "telephone": "11223344"
+        },
+        {
+            "id": "2",
+            "idRole": "parent",
+            "prenomUser": "Mamadou",
+            "nomUser": "SOW",
+            "email": "mamadou@gmail.com",
+            "password": "12345678",
+            "telephone": "22334455"
+        },
+        {
+            "id": "3",
+            "idRole": "Enfant",
+            "prenomUser": "Awa",
+            "nomUser": "Sow",
+            "email": "awa@gmail.com",
+            "password": "12345678",
+            "telephone": "33445566"
+        },
+        {
+            "id": "4",
+            "idRole": "Enfant",
+            "prenomUser": "Ousmane",
+            "nomUser": "SOW",
+            "email": "ousmane@gmail.com",
+            "password": "12345678",
+            "telephone": "44556677"
+        },
+        {
+            "id": "5",
+            "idRole": "Enfant",
+            "prenomUser": "Aminata",
+            "nomUser": "SOW",
+            "email": "aminata@gmail.com",
+            "password": "12345678",
+            "telephone": "55667788"
+        },
+        {
+            "id": "6",
+            "idRole": "Enfant",
+            "prenomUser": "Zeina",
+            "nomUser": "SOW",
+            "email": "Zeina@gmail.com",
+            "password": "12345678",
+            "telephone": "55667788"
         }
     ],
     "roles": [

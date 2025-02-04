@@ -65,7 +65,8 @@
 }
 
 /* Effet hover */
-.custom-nav-link:hover {
+.custom-nav-link:hover,
+.dropdown-item:hover {
     background-color: var(--secondary-color);
     /* Gris clair au survol */
     color: white !important;
@@ -73,9 +74,23 @@
 }
 
 /* Effet active */
-.custom-nav-link.active {
+.custom-nav-link.active,
+.dropdown-item.active {
     background-color: var(--primary-color);
     /* Bleu Bootstrap */
     color: white !important;
     font-weight: bold;
 }
+
+/* .dropdown {
+    position: relative;
+    overflow: visible !important;
+}
+
+.dropdown-menu {
+    min-width: 200px;
+    /* Ajuste selon ton besoin */
+/*white-space: nowrap; */
+/* Évite les retours à la ligne inutiles */
+/*}
+*/

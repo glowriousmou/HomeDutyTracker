@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { Navbar } from './navbar.interface';
-import { DASHBOARD_PATH, LIST_ASSIGNATION_PATH, LIST_USER_PATH, SETTING_PATH } from '@constants/routerPath';
+import { DASHBOARD_PATH, LIST_ASSIGNATION_PATH, FAMILY_PATH, LOGIN_PATH, SETTING_PATH } from '@constants/routerPath';
+import { AuthenticationService } from '@app/guards/authentication.service';
 
 @Component({
   selector: 'app-navbar',
@@ -17,11 +18,17 @@ export class NavbarComponent {
   isProfilOpen = false;
   menuItems: Navbar[] = [
     { title: 'Dashboard', routePath: DASHBOARD_PATH },
-    { title: 'Famille', routePath: LIST_USER_PATH },
+    { title: 'Famille', routePath: FAMILY_PATH },
     { title: 'Assingation de tâche', routePath: LIST_ASSIGNATION_PATH },
     { title: 'Paramettre', routePath: SETTING_PATH },
     // { title: 'Logout', routePath: '/logout' }
   ]
+
+  constructor(private authenticationService: AuthenticationService, private router: Router) { }
+  logout() {
+    this.authenticationService.logout()
+    this.router.navigate([LOGIN_PATH]);
+  }
   toggleNavbar() {
     this.isNavbarOpen = !this.isNavbarOpen;
     this.isNotificationOpen = false;

@@ -1,0 +1,14 @@
+.node {
+    margin-left: 20px;
+}
+
+.node-content {
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: inline-block;
+}
+
+.children {
+    margin-top: 10px;
+    margin-left: 20px;
+}

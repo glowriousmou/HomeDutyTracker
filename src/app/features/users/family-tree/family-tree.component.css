@@ -1,0 +1,103 @@
+.chart-wrap {
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+}
+
+/* 🎯 STYLE DES BLOCS */
+.org-box {
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+}
+
+.org-box:hover {
+    transform: translateY(-5px);
+}
+
+/* 🛠️ RELATIONS ENTRE LES NIVEAUX */
+/* Ligne verticale au-dessus */
+.org-box::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    width: 2px;
+    height: 20px;
+    background-color: #007bff;
+    transform: translateX(-50%);
+}
+
+/* Lignes horizontales et courbées */
+.connector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 20px;
+}
+
+.connector::before {
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 2px;
+    background-color: #007bff;
+    top: 50%;
+    left: 10%;
+    border-radius: 50px;
+}
+
+/* Ligne verticale en bas */
+.org-box::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    width: 2px;
+    height: 20px;
+    background-color: #007bff;
+    transform: translateX(-50%);
+}
+
+/* Supprime la ligne verticale pour le premier élément */
+.org-box:first-child::before {
+    display: none;
+}
+
+/* 🔄 STYLE DES GROUPES */
+.org-group {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    position: relative;
+}
+
+/* Courbes entre les niveaux */
+.connector::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 20px;
+    background-color: #007bff;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 🌟 Ajout d’un effet d’ombre */
+.org-box-shadow {
+    box-shadow: 0px 8px 15px rgba(0, 123, 255, 0.2);
+}
+
+org-top::before {
+    display: none;
+    /* Pas besoin de trait au-dessus du premier élément */
+}

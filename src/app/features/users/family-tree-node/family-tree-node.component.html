@@ -1,0 +1,16 @@
+<div class="node">
+  <div class="node-content">
+    <strong>{{ familyTreeNode.name }}</strong
+    ><br />
+    <em>{{ familyTreeNode.name }}</em>
+  </div>
+  <div
+    class="children"
+    *ngIf="familyTreeNode?.children && familyTreeNode?.children?.length"
+  >
+    <app-family-tree-node
+      *ngFor="let child of familyTreeNode?.children"
+      [familyTreeNode]="child"
+    ></app-family-tree-node>
+  </div>
+</div>
