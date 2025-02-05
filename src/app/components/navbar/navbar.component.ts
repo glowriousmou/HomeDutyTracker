@@ -16,11 +16,12 @@ export class NavbarComponent {
   isNavbarOpen = false;
   isNotificationOpen = false;
   isProfilOpen = false;
+  connectedUser = localStorage.getItem('connectedUser') ? JSON.parse(localStorage.getItem('connectedUser')!) : null;
   menuItems: Navbar[] = [
     { title: 'Dashboard', routePath: DASHBOARD_PATH },
     { title: 'Famille', routePath: FAMILY_PATH },
-    { title: 'Assingation de tâche', routePath: LIST_ASSIGNATION_PATH },
-    { title: 'Paramettre', routePath: SETTING_PATH },
+    { title: 'Assignation de tâches', routePath: LIST_ASSIGNATION_PATH },
+    { title: 'Paramètres', routePath: SETTING_PATH },
     // { title: 'Logout', routePath: '/logout' }
   ]
 

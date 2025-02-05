@@ -24,7 +24,7 @@
 
     <!-- Right elements (Dropdowns) -->
     <div class="d-flex align-items-center ms-auto">
-      <div class="dropdown me-3">
+      <!-- <div class="dropdown me-3">
         <a
           class="text-reset dropdown-toggle hidden-arrow"
           (click)="toggleNotification()"
@@ -42,9 +42,13 @@
           <li><a class="dropdown-item" href="#">Tâches Supervisées</a></li>
           <li><a class="dropdown-item" href="#">informations</a></li>
         </ul>
-      </div>
+      </div> -->
 
       <!-- Avatar -->
+      <p>
+        {{ connectedUser.prenomUser }} {{ connectedUser.nomUser }},
+        <span>{{ connectedUser.idRole }}</span>
+      </p>
       <div class="dropdown">
         <a
           class="dropdown-toggle d-flex align-items-center hidden-arrow"
@@ -52,7 +56,7 @@
           [attr.aria-expanded]="isProfilOpen"
         >
           <img
-            src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
+            [src]="connectedUser.photo"
             class="rounded-circle"
             height="25"
             alt="User Avatar"

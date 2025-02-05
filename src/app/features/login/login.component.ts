@@ -36,14 +36,14 @@ export class LoginComponent {
   onSubmit() {
     if (this.loginForm.valid) {
       this.errorMsg = '';
-      console.log('Form Submitted:', this.loginForm.value);
+      // console.log('Form Submitted:', this.loginForm.value);
       this.authenticationService.login(this.loginForm.value.email, this.loginForm.value.password).subscribe(
         (isAuthenticated) => {
           if (isAuthenticated) {
-            console.log("isAuthenticated", isAuthenticated)
+            // console.log("isAuthenticated", isAuthenticated)
             const connectedUser: User | null = localStorage.getItem('connectedUser') ? JSON.parse(localStorage.getItem('connectedUser')!)
               : null;
-            console.log("connectedUser", connectedUser)
+            // console.log("connectedUser", connectedUser)
             this.router.navigate([DASHBOARD_PATH]);
             /* if (connectedUser?.fonction === "Directeur") {
               this.router.navigate(['/home']);

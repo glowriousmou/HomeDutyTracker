@@ -1,0 +1,21 @@
+/* form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+} */
+
+label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+input,
+select {
+    padding: 8px;
+    margin-top: 5px;
+}
+
+small {
+    color: red;
+    font-size: 12px;
+}

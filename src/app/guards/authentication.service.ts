@@ -34,6 +34,14 @@ export class AuthenticationService {
     }
     return false
   }
+  checkRole(role: string): boolean {
+    if (this.isLocalStorageAvailable) {
+      const connectedUser = localStorage.getItem('connectedUser');
+      const check = connectedUser ? JSON.parse(connectedUser).idRole?.toLowerCase() === role.toLowerCase() : false;
+      return check;
+    }
+    return false
+  }
 
   logout(): void {
     localStorage.removeItem('connectedUser');

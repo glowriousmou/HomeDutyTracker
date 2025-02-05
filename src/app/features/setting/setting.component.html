@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+<!-- <h2 class="titlePrimary title mt-4">Paramètres</h2>
+<div class="row">
+  <div class="col-md-6" (click)="navigateToTask()">Tâches</div>
+  <div class="col-md-6" (click)="navigateToCritere()">
+    Critères de validation
+  </div>
+</div> -->
+<div class="container">
+  <h2 class="titlePrimary title mt-4 text-center">Paramètres</h2>
+
+  <div class="row d-flex justify-content-center mt-4">
+    <div *ngFor="let setting of settingData" class="col-12 col-md-5 mb-3">
+      <div class="card setting-card">
+        <div class="card-body text-center">
+          <i class="{{ setting.icon }} icon"></i>
+          <h5 class="card-title mt-2">{{ setting.label }}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

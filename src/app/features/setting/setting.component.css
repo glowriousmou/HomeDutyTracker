@@ -1,0 +1,22 @@
+.setting-card {
+    border: none;
+    border-radius: 12px;
+    padding: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: linear-gradient(135deg, var(--primary-color), #00d4ff);
+    color: white;
+}
+
+.setting-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.setting-card .icon {
+    font-size: 40px;
+}
+
+.card-title {
+    font-weight: bold;
+}

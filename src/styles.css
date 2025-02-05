@@ -83,18 +83,23 @@
     z-index: 1000;
 }
 
-/* ngx-datatable.bootstrap {
-    border: 1px solid #dee2e6;
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    /* Enables vertical scrolling */
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    padding: 20px;
+    margin-bottom: 50px;
+    /* Light background */
 }
 
-ngx-datatable.bootstrap .datatable-body-row:hover {
-    background-color: #f8f9fa !important;
-    cursor: pointer;
+/* .container {
+    min-height: 100vh;
+padding: 20px;
 }
 
-@media (max-width: 768px) {
-    ngx-datatable {
-        overflow-x: auto;
-        display: block;
-    }
-} */
+*/

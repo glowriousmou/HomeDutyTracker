@@ -7,7 +7,7 @@
     position: relative;
 }
 
-/* 🎯 STYLE DES BLOCS */
+
 .org-box {
     background: #fff;
     border-radius: 10px;
@@ -22,8 +22,6 @@
     transform: translateY(-5px);
 }
 
-/* 🛠️ RELATIONS ENTRE LES NIVEAUX */
-/* Ligne verticale au-dessus */
 .org-box::before {
     content: "";
     position: absolute;
@@ -35,7 +33,7 @@
     transform: translateX(-50%);
 }
 
-/* Lignes horizontales et courbées */
+
 .connector {
     display: flex;
     justify-content: center;
@@ -55,7 +53,6 @@
     border-radius: 50px;
 }
 
-/* Ligne verticale en bas */
 .org-box::after {
     content: "";
     position: absolute;
@@ -67,12 +64,10 @@
     transform: translateX(-50%);
 }
 
-/* Supprime la ligne verticale pour le premier élément */
 .org-box:first-child::before {
     display: none;
 }
 
-/* 🔄 STYLE DES GROUPES */
 .org-group {
     display: flex;
     justify-content: center;
@@ -80,7 +75,6 @@
     position: relative;
 }
 
-/* Courbes entre les niveaux */
 .connector::after {
     content: "";
     position: absolute;
@@ -92,12 +86,17 @@
     transform: translateX(-50%);
 }
 
-/* 🌟 Ajout d’un effet d’ombre */
 .org-box-shadow {
     box-shadow: 0px 8px 15px rgba(0, 123, 255, 0.2);
 }
 
 org-top::before {
     display: none;
-    /* Pas besoin de trait au-dessus du premier élément */
+}
+
+.avatar-img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    margin-bottom: 5px;
 }

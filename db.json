@@ -1,72 +1,88 @@
 {
-    "users": [
-        {
-            "id": "1",
-            "idRole": "Parent",
-            "prenomUser": "Fatou",
-            "nomUser": "SOW",
-            "email": "fatou@gmail.com",
-            "password": "12345678",
-            "telephone": "11223344"
-        },
-        {
-            "id": "2",
-            "idRole": "parent",
-            "prenomUser": "Mamadou",
-            "nomUser": "SOW",
-            "email": "mamadou@gmail.com",
-            "password": "12345678",
-            "telephone": "22334455"
-        },
-        {
-            "id": "3",
-            "idRole": "Enfant",
-            "prenomUser": "Awa",
-            "nomUser": "Sow",
-            "email": "awa@gmail.com",
-            "password": "12345678",
-            "telephone": "33445566"
-        },
-        {
-            "id": "4",
-            "idRole": "Enfant",
-            "prenomUser": "Ousmane",
-            "nomUser": "SOW",
-            "email": "ousmane@gmail.com",
-            "password": "12345678",
-            "telephone": "44556677"
-        },
-        {
-            "id": "5",
-            "idRole": "Enfant",
-            "prenomUser": "Aminata",
-            "nomUser": "SOW",
-            "email": "aminata@gmail.com",
-            "password": "12345678",
-            "telephone": "55667788"
-        },
-        {
-            "id": "6",
-            "idRole": "Enfant",
-            "prenomUser": "Zeina",
-            "nomUser": "SOW",
-            "email": "Zeina@gmail.com",
-            "password": "12345678",
-            "telephone": "55667788"
-        }
-    ],
-    "roles": [
-        {
-            "id": "1",
-            "nomRole": "Parent"
-        },
-        {
-            "id": "2",
-            "nomRole": "Enfant"
-        }
-    ],
-    "assignation": [],
-    "validationAssignation": [],
-    "critereValidation": [],
-    "tache": []
+  "users": [
+    {
+      "prenomUser": "Fatou",
+      "nomUser": "SOW",
+      "email": "fatou@gmail.com",
+      "telephone": "11223344",
+      "dateNaissance": "1979-01-01",
+      "sexe": "F",
+      "photo": "assets/avatar/mother.jpg",
+      "id": "1",
+      "idRole": "parent"
+    },
+    {
+      "id": "2",
+      "idRole": "parent",
+      "prenomUser": "Mamadou",
+      "nomUser": "SOW",
+      "email": "mamadou@gmail.com",
+      "password": "12345678",
+      "telephone": "22334455",
+      "dateNassance": "1981-02-02",
+      "sexe": "M",
+      "photo": "assets/avatar/father.jpg"
+    },
+    {
+      "id": "3",
+      "idRole": "Enfant",
+      "prenomUser": "Awa",
+      "nomUser": "Sow",
+      "email": "awa@gmail.com",
+      "password": "12345678",
+      "telephone": "33445566",
+      "dateNassance": "2009-06-20",
+      "sexe": "F",
+      "photo": "assets/avatar/daughter.jpg"
+    },
+    {
+      "id": "4",
+      "idRole": "Enfant",
+      "prenomUser": "Ousmane",
+      "nomUser": "SOW",
+      "email": "ousmane@gmail.com",
+      "password": "12345678",
+      "telephone": "44556677",
+      "dateNaissance": "2012-01-01",
+      "sexe": "M",
+      "photo": "assets/avatar/son.jpg"
+    },
+    {
+      "id": "5",
+      "idRole": "Enfant",
+      "prenomUser": "Aminata",
+      "nomUser": "SOW",
+      "email": "aminata@gmail.com",
+      "password": "12345678",
+      "telephone": "55667788",
+      "dateNassance": "2015-01-01",
+      "sexe": "F",
+      "photo": "assets/avatar/daughter.jpg"
+    },
+    {
+      "prenomUser": "Amira",
+      "nomUser": "Sow",
+      "email": "sa@gmail.com",
+      "telephone": "84526395",
+      "dateNaissance": "2003-05-09",
+      "sexe": "F",
+      "photo": "assets/avatar/daughter.jpg",
+      "id": "6",
+      "idRole": "Enfant"
+    }
+  ],
+  "roles": [
+    {
+      "id": "1",
+      "nomRole": "Parent"
+    },
+    {
+      "id": "2",
+      "nomRole": "Enfant"
+    }
+  ],
+  "assignation": [],
+  "validationAssignation": [],
+  "critereValidation": [],
+  "tache": []
 }
