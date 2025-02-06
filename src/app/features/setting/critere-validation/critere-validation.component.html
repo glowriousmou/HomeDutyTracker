@@ -1,2 +1,16 @@
 <app-navbar></app-navbar>
-<p>critere-validation works!</p>
+<div class="container">
+  <h2 class="titlePrimary title mt-4 text-center">
+    Liste des critères de validation
+  </h2>
+  <button
+    type="submit"
+    data-mdb-button-init
+    data-mdb-ripple-init
+    class="btn mb-4 mt-4 btnSubmitPrimary"
+    [disabled]="!isParent"
+    (click)="navigateToForm(selectedData)"
+  >
+    Ajouter un critère de validation
+  </button>
+</div>

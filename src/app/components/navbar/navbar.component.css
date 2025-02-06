@@ -82,6 +82,10 @@
     font-weight: bold;
 }
 
+.titleNavBar {
+    font-weight: 900;
+}
+
 /* .dropdown {
     position: relative;
     overflow: visible !important;

@@ -11,5 +11,9 @@ export const FAMILY_PATH = "familyTree"
 export const LIST_ASSIGNATION_PATH = "listAssignation"
 
 export const SETTING_PATH = "settings"
+
 export const LIST_TASK_PATH = "settings/listTask"
+export const FORM_TASK_PATH = "settings/taskInfo"
+
 export const LIST_CRITERE_PATH = "settings/listCritere"
+export const FORM_CRITERE_PATH = "settings/critereInfo"

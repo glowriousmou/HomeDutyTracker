@@ -13,14 +13,14 @@ import { CommonModule } from '@angular/common';
 export class SettingComponent {
   constructor(private router: Router) { }
   settingData = [
-    { label: "Tâches", onClick: this.navigateToTask(), icon: "fas fa-tasks icon" },
-    { label: "Critère de Validation", onClick: this.navigateToCritere(), icon: "fas fa-check-circle icon" },
+    { label: "Tâches", onClick: () => this.router.navigate(['/' + LIST_TASK_PATH]), icon: "fa-tasks" },
+    { label: "Critère de Validation", onClick: () => this.router.navigate(['/' + LIST_CRITERE_PATH]), icon: "fa-check-circle" },
   ]
   navigateToTask(): void {
-    // this.router.navigate(['/' + LIST_TASK_PATH]);
+    this.router.navigate(['/' + LIST_TASK_PATH]);
   }
   navigateToCritere(): void {
-    // this.router.navigate(['/' + LIST_CRITERE_PATH]);
+    this.router.navigate(['/' + LIST_CRITERE_PATH]);
   }
 
 }

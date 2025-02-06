@@ -19,7 +19,7 @@
       "email": "mamadou@gmail.com",
       "password": "12345678",
       "telephone": "22334455",
-      "dateNassance": "1981-02-02",
+      "dateNaissance": "1981-02-02",
       "sexe": "M",
       "photo": "assets/avatar/father.jpg"
     },
@@ -31,7 +31,7 @@
       "email": "awa@gmail.com",
       "password": "12345678",
       "telephone": "33445566",
-      "dateNassance": "2009-06-20",
+      "dateNaissance": "2009-06-20",
       "sexe": "F",
       "photo": "assets/avatar/daughter.jpg"
     },
@@ -55,7 +55,7 @@
       "email": "aminata@gmail.com",
       "password": "12345678",
       "telephone": "55667788",
-      "dateNassance": "2015-01-01",
+      "dateNaissance": "2015-01-01",
       "sexe": "F",
       "photo": "assets/avatar/daughter.jpg"
     },
@@ -81,8 +81,8 @@
       "nomRole": "Enfant"
     }
   ],
-  "assignation": [],
+  "assignations": [],
   "validationAssignation": [],
-  "critereValidation": [],
-  "tache": []
+  "critereValidations": [],
+  "taches": []
 }

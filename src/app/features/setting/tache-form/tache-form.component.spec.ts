@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FamilyTreeNodeComponent } from './family-tree-node.component';
+import { TacheFormComponent } from './tache-form.component';
 
-describe('FamilyTreeNodeComponent', () => {
-  let component: FamilyTreeNodeComponent;
-  let fixture: ComponentFixture<FamilyTreeNodeComponent>;
+describe('TacheFormComponent', () => {
+  let component: TacheFormComponent;
+  let fixture: ComponentFixture<TacheFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FamilyTreeNodeComponent]
+      imports: [TacheFormComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(FamilyTreeNodeComponent);
+    fixture = TestBed.createComponent(TacheFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

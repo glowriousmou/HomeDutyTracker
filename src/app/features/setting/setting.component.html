@@ -11,9 +11,9 @@
 
   <div class="row d-flex justify-content-center mt-4">
     <div *ngFor="let setting of settingData" class="col-12 col-md-5 mb-3">
-      <div class="card setting-card">
+      <div class="card setting-card" (click)="setting.onClick()">
         <div class="card-body text-center">
-          <i class="{{ setting.icon }} icon"></i>
+          <i class="fas {{ setting.icon }} icon"></i>
           <h5 class="card-title mt-2">{{ setting.label }}</h5>
         </div>
       </div>

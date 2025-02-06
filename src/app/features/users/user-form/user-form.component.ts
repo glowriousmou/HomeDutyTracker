@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '@app/interfaces/user';
 import { UserService } from './../user.service';
 import { NavbarComponent } from '@components/navbar/navbar.component';
@@ -51,6 +51,12 @@ export class UserFormComponent implements OnInit {
     this.getPathParams()
 
   }
+  ngAfterViewInit() {
+    // console.log('isParent after view init:', this.isParent, typeof this.isParent);
+    // console.log('form.invalid after view init:', this.form.invalid);
+  }
+
+
   getPathParams(): void {
     this.activatedRoute.params?.subscribe(params => {
 
@@ -61,7 +67,7 @@ export class UserFormComponent implements OnInit {
     });
     this.activatedRoute.queryParams?.subscribe(params => {
       //console.log("Params:", params);
-      this.isParent = params['isParent'];
+      this.isParent = params['isParent']?.toLowerCase() === "true";
       this.selectedUser = params['selectedUser'] ? JSON.parse(params['selectedUser']) : null;
       this.listUser = params['listUser'] ? JSON.parse(params['listUser']) : null;
 
@@ -151,3 +157,5 @@ export class UserFormComponent implements OnInit {
   }
 
 }
+
+
