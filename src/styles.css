@@ -103,3 +103,51 @@ padding: 20px;
 }
 
 */
+ngx-datatable.bootstrap {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 5px;
+}
+
+ngx-datatable {
+    border: 1px solid #ddd;
+}
+
+ngx-datatable .datatable-body-cell {
+    border-bottom: 1px solid #ddd;
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+}
+
+ngx-datatable .datatable-header-cell {
+    border-bottom: 2px solid #007bff;
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
+    /* Centrer l'en-tête */
+}
+
+/* Couleur de survol de la ligne */
+ngx-datatable .datatable-body-row:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* Changer la couleur lors du clic sur une ligne */
+ngx-datatable .datatable-body-row.active {
+    background-color: #d3d3d3;
+}
+
+.datatable-footer {
+    color: #007bff;
+    /* Couleur du texte */
+}
+
+.datatable-footer span {
+    font-size: 16px;
+    /* Taille du texte */
+    color: #333;
+    /* Couleur du texte principal */
+}

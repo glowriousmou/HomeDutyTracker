@@ -91,7 +91,7 @@ export class UserFormComponent implements OnInit {
     const newItem = { ...this.form.value, ...{ id: `${lastId + 1}`, idRole: "Enfant", photo } }
     this.userService.addUser(newItem).subscribe({
       next: (resp) => {
-        console.log('newItem saved:', resp);
+        // console.log('newItem saved:', resp);
         alert('Enregistrement effectuée avec succès');
         this.navigateToFamilyTree()
       },
@@ -112,7 +112,7 @@ export class UserFormComponent implements OnInit {
     const editItem = { ...this.form.value, ...{ photo, id: this.selectedUser?.id, idRole: this.selectedUser?.idRole } }
     this.userService.editUser(editItem).subscribe({
       next: (resp) => {
-        console.log('item edit:', resp);
+        // console.log('item edit:', resp);
         alert('Modification effectuée avec succès');
         this.navigateToFamilyTree()
 

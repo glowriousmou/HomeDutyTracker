@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
-<div class="container">
-  <h2 class="titlePrimary title mt-4 text-center">
+<div class="container mt-4">
+  <h2 class="titlePrimary title text-center">
     Liste des critères de validation
   </h2>
   <button
@@ -11,6 +11,44 @@
     [disabled]="!isParent"
     (click)="navigateToForm(selectedData)"
   >
-    Ajouter un critère de validation
+    Ajouter une critère de validation
   </button>
+  <input
+    type="text"
+    [(ngModel)]="searchText"
+    (input)="filterDataTable()"
+    class="form-control mb-3"
+    placeholder="Rechercher ..."
+  />
+  <ngx-datatable
+    class="bootstrap"
+    [rows]="filteredData"
+    [columns]="DataTableColumns"
+    [columnMode]="'force'"
+    [headerHeight]="50"
+    [footerHeight]="50"
+    [rowHeight]="'auto'"
+    [limit]="3"
+    [selectionType]="selectionType"
+    (select)="navigateToForm($event.selected[0])"
+    [messages]="messages"
+  >
+    <ngx-datatable-column
+      *ngFor="let column of DataTableColumns"
+      [name]="column.name"
+      [prop]="column.prop"
+      [sortable]="true"
+    >
+      <!-- <ng-template let-column="column" ngx-datatable-header-template>
+        <span class="m-2">{{ column.name }}</span>
+        <i class="fa fa-sort-up"></i>
+        <i class="fa fa-sort-down"></i>
+      </ng-template> -->
+    </ngx-datatable-column>
+    <ngx-datatable-footer>
+      <div class="datatable-footer">
+        <span>Total des lignes : {{ filteredData.length }}</span>
+      </div>
+    </ngx-datatable-footer>
+  </ngx-datatable>
 </div>

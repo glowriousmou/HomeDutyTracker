@@ -83,6 +83,28 @@
   ],
   "assignations": [],
   "validationAssignation": [],
-  "critereValidations": [],
-  "taches": []
+  "critereValidations": [
+    {
+      "id": "1",
+      "nom": "Évier propre",
+      "description": "Aucune vaisselle sale dans l’évier, égouttoir vide."
+    },
+    {
+      "nom": "//Sol propre",
+      "description": " 77 Aucun débris ou trace visible sur le sol.",
+      "id": "2"
+    }
+  ],
+  "taches": [
+    {
+      "id": "1",
+      "nom": "Faire la vaisselle",
+      "description": " Laver, sécher et ranger la vaisselle après le repas."
+    },
+    {
+      "nom": "Sortir les poubelles //",
+      "description": " Vider les poubelles et sortir les sacs à l’endroit désigné.//",
+      "id": "2"
+    }
+  ]
 }
