@@ -1,0 +1,81 @@
+<app-navbar></app-navbar>
+<div>
+  <h2 class="titlePrimary title mt-4">
+    Information d'une assignation de tache
+  </h2>
+
+  <div class="container mt-4">
+    <div class="card">
+      <div class="card-body py-5 px-md-5">
+        <div class="align-items-center justify-content-center">
+          <form [formGroup]="form">
+            <div *ngFor="let field of formFields">
+              <div class="mb-2 form-outline">
+                <label class="form-label" [for]="field.name">{{
+                  field.label
+                }}</label>
+
+                <input
+                  *ngIf="field.type !== 'select'"
+                  [type]="field.type"
+                  [formControlName]="field.name"
+                  [id]="field.name"
+                  class="form-control w-100"
+                />
+                <select
+                  *ngIf="field.type === 'select'"
+                  [formControlName]="field.name"
+                  class="form-control"
+                  [id]="field.name"
+                >
+                  <option *ngFor="let option of field.options" [value]="option">
+                    {{ option }}
+                  </option>
+                </select>
+                <!-- <div
+                  *ngFor="let critere of listCritere"
+                  *ngIf="field.name === 'critere'"
+                >
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      [value]="critere"
+                      [checked]="isSelectedCritere(critere)"
+                      (change)="onSelectCours(critere, $event)"
+                      id="{{ critere.id }}"
+                    />
+                    <label class="form-check-label" for="{{ critere }}">
+                      {{ critere.nom }}
+                    </label>
+                  </div>
+                </div> -->
+              </div>
+              <div
+                *ngIf="
+                  form.get(field.name)?.invalid && form.get(field.name)?.touched
+                "
+              >
+                <small *ngIf="form.get(field.name)?.hasError('required')"
+                  >Ce champ est requis.</small
+                >
+              </div>
+            </div>
+            <div
+              class="d-flex justify-content-center"
+              *ngIf="isParent === true"
+            >
+              <button
+                class="btn mb-4 btnSubmitPrimary"
+                [disabled]="form.invalid"
+                (click)="onSubmit()"
+              >
+                {{ action === "add" ? "Enregistrer" : "Modifier" }}
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

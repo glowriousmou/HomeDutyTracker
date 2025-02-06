@@ -1,9 +1,16 @@
+
 export interface Assignation {
-    id: string;
-    idRole: string,
-    prenomUser: string;
-    nomUser: string;
-    email: string;
-    password: string;
-    telephone: string;
+    id?: string;
+    idTache: string;
+    tache?: string;
+    createur?: string;
+    idCreateur: string;
+    responsable?: string;
+    idResponsable: string;
+    superviseur?: string;
+    idSuperviseur: string;
+    statut: string;
+    // dateCreation: Date;
+    datelimite: Date;
+    dateValidation: Date;
 }

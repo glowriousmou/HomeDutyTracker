@@ -81,7 +81,17 @@
       "nomRole": "Enfant"
     }
   ],
-  "assignations": [],
+  "assignations": [
+    {
+      "statut": "Fait",
+      "datelimite": "2025-01-28",
+      "idTache": "2",
+      "idCreateur": "1",
+      "idResponsable": "3",
+      "idSuperviseur": "5",
+      "id": "1"
+    }
+  ],
   "validationAssignation": [],
   "critereValidations": [
     {
