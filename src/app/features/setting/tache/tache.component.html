@@ -26,7 +26,6 @@
     [headerHeight]="50"
     [footerHeight]="50"
     [rowHeight]="'auto'"
-    [limit]="3"
     [selectionType]="selectionType"
     (select)="navigateToForm($event.selected[0])"
     [messages]="messages"
@@ -49,4 +48,7 @@
       </div>
     </ngx-datatable-footer>
   </ngx-datatable>
+  <!-- <div class="datatable-footer" *ngIf="filteredData.length > 0">
+    <span>Total des lignes : {{ filteredData.length }}</span>
+  </div> -->
 </div>

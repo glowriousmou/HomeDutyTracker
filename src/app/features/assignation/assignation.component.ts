@@ -127,7 +127,9 @@ export class AssignationComponent {
   filterDataTable() {
     this.filteredData = this.listData.filter(data =>
       data.tache?.toLowerCase().includes(this.searchText?.toLowerCase()) ||
-      data.responsable?.toLowerCase().includes(this.searchText?.toLowerCase())
+      data.responsable?.toLowerCase().includes(this.searchText?.toLowerCase()) ||
+      data.superviseur?.toLowerCase().includes(this.searchText?.toLowerCase()) ||
+      data.statut?.toLowerCase().includes(this.searchText?.toLowerCase())
     );
   }
   ngOnInit(): void {

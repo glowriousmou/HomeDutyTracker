@@ -7,6 +7,7 @@
     --primary-color: #0d21a1;
     /* Color for headings, subheadings and title throughout the website */
     --secondary-color: #c71f00;
+    --hover-color: #a88781de;
     /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
     --surface-color: #ffffff;
     /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
@@ -131,7 +132,7 @@ ngx-datatable .datatable-header-cell {
 
 /* Couleur de survol de la ligne */
 ngx-datatable .datatable-body-row:hover {
-    background-color: var(--secondary-color);
+    background-color: var(--hover-color);
     color: white;
 }
 
@@ -143,6 +144,12 @@ ngx-datatable .datatable-body-row.active {
 .datatable-footer {
     color: #007bff;
     /* Couleur du texte */
+}
+
+.ngx-datatable .datatable-footer {
+    display: flex !important;
+    justify-content: space-between !important;
+    visibility: visible !important;
 }
 
 .datatable-footer span {

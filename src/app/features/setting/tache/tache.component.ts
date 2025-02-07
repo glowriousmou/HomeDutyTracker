@@ -25,13 +25,16 @@ export class TacheComponent {
   filteredData: Tache[] = [];
   sortType: SortType = SortType.multi;
   selectionType: SelectionType = SelectionType.single;
+  currentPage = 1;
+  pageSize = 10;
+  pagedData: Tache[] = [];
   DataTableColumns = [
     { prop: 'nom', name: 'Nom' },
     { prop: 'description', name: 'Description' }
   ];
   messages = {
     emptyMessage: 'Aucune donnée trouvé',
-    totalMessage: 'ligne (s) ',
+    // totalMessage: 'ligne (s) ',
     // selectedMessage: 'Lignes sélectionnées : {{ selected }}',
 
   };
@@ -55,7 +58,6 @@ export class TacheComponent {
       this.listData = data;
       this.filteredData = data;
       // console.log('ListData onfetchData:', this.listData);
-
     });
   }
   filterDataTable() {

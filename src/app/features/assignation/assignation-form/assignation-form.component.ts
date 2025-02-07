@@ -49,12 +49,12 @@ export class AssignationFormComponent {
   }
   initializeForm(): void {
     // console.log("aa", this.listTache)
-    let statut = ["Initialisé", "Fait", "Inachevé", "Complété"]
+    let statut = ["En attente", "En cours", "Fait", "En retard", "Inachevé", "Complété"]
     if (!this.isParent && this.connectedUser.id === this.selectedData?.idResponsable) {
-      statut = ["Initialisé", "Fait"]
+      statut = ["En attente", "En cours", "Fait", "En retard"]
     }
     if (!this.isParent && this.connectedUser.id === this.selectedData?.idSuperviseur) {
-      statut = ["Inachevé", "Complété"]
+      statut = ["En retard", "Inachevé", "Complété"]
     }
     this.form = this.fb.group({});
     this.formFields = [

@@ -1,0 +1,128 @@
+{
+  "users": [
+    {
+      "prenomUser": "Fatou",
+      "nomUser": "SOW",
+      "email": "fatou@gmail.com",
+      "telephone": "11223344",
+      "dateNaissance": "1979-01-01",
+      "sexe": "F",
+      "photo": "assets/avatar/mother.jpg",
+      "id": "1",
+      "idRole": "parent"
+    },
+    {
+      "id": "2",
+      "idRole": "parent",
+      "prenomUser": "Mamadou",
+      "nomUser": "SOW",
+      "email": "mamadou@gmail.com",
+      "password": "12345678",
+      "telephone": "22334455",
+      "dateNaissance": "1981-02-02",
+      "sexe": "M",
+      "photo": "assets/avatar/father.jpg"
+    },
+    {
+      "id": "3",
+      "idRole": "Enfant",
+      "prenomUser": "Awa",
+      "nomUser": "Sow",
+      "email": "awa@gmail.com",
+      "password": "12345678",
+      "telephone": "33445566",
+      "dateNaissance": "2009-06-20",
+      "sexe": "F",
+      "photo": "assets/avatar/daughter.jpg"
+    },
+    {
+      "id": "4",
+      "idRole": "Enfant",
+      "prenomUser": "Ousmane",
+      "nomUser": "SOW",
+      "email": "ousmane@gmail.com",
+      "password": "12345678",
+      "telephone": "44556677",
+      "dateNaissance": "2012-01-01",
+      "sexe": "M",
+      "photo": "assets/avatar/son.jpg"
+    },
+    {
+      "id": "5",
+      "idRole": "Enfant",
+      "prenomUser": "Aminata",
+      "nomUser": "SOW",
+      "email": "aminata@gmail.com",
+      "password": "12345678",
+      "telephone": "55667788",
+      "dateNaissance": "2015-01-01",
+      "sexe": "F",
+      "photo": "assets/avatar/daughter.jpg"
+    },
+    {
+      "prenomUser": "Amira",
+      "nomUser": "Sow",
+      "email": "sa@gmail.com",
+      "telephone": "84526395",
+      "dateNaissance": "2003-05-09",
+      "sexe": "F",
+      "photo": "assets/avatar/daughter.jpg",
+      "id": "6",
+      "idRole": "Enfant"
+    }
+  ],
+  "roles": [
+    {
+      "id": "1",
+      "nomRole": "Parent"
+    },
+    {
+      "id": "2",
+      "nomRole": "Enfant"
+    }
+  ],
+  "assignations": [
+    {
+      "statut": "Complété",
+      "datelimite": "2025-02-12T00:00:00.000Z",
+      "dateValidation": "2025-02-07",
+      "idTache": "1",
+      "idCreateur": "1",
+      "idResponsable": "5",
+      "idSuperviseur": "4",
+      "id": "1"
+    }
+  ],
+  "validationAssignation": [
+    {
+      "id": "11",
+      "idAssignation": "1",
+      "idCritere": "1",
+      "etat": "en attente"
+    }
+  ],
+  "critereValidations": [
+    {
+      "id": "1",
+      "nom": "Évier propre",
+      "description": "Aucune vaisselle sale dans l’évier, égouttoir vide."
+    },
+    {
+      "nom": "Sol propre",
+      "description": "Aucun débris ou trace visible sur le sol.",
+      "id": "2"
+    }
+  ],
+  "taches": [
+    {
+      "id": "1",
+      "nom": "Faire la vaisselle",
+      "description": " Laver, sécher et ranger la vaisselle après le repas."
+    },
+    {
+      "nom": "Sortir les poubelles",
+      "description": " Vider les poubelles et sortir les sacs à l’endroit désigné.",
+      "id": "2"
+    }
+  ]
+}
