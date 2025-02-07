@@ -9,6 +9,8 @@ import { LIST_ASSIGNATION_PATH } from '@app/constants/routerPath';
 import { User } from '@app/interfaces/user';
 import { Tache } from '@app/interfaces/tache';
 import { CritereValidation } from '@app/interfaces/critereValidation';
+import { ValidationAssignation } from '@app/interfaces/validationAssignation';
+import { ValidationAssignationService } from '@app/services/validation-assignation.service';
 
 @Component({
   selector: 'app-assignation-form',
@@ -23,25 +25,37 @@ export class AssignationFormComponent {
   listUser: User[] = [];
   listTache: Tache[] = [];
   listCritere: CritereValidation[] = [];
+  selectedCritere: CritereValidation[] = [];
+  listValidationAssignation: ValidationAssignation[] = [];
   action: string = "add";
   form!: FormGroup;
   formFields: any = []
+  connectedUser!: User;
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private assignationService: AssignationService,
+    private validationAssignationService: ValidationAssignationService,
     private fb: FormBuilder,
 
   ) {
 
   }
   ngOnInit() {
+    this.connectedUser = localStorage.getItem('connectedUser') ? JSON.parse(localStorage.getItem('connectedUser')!) : null;
     this.getPathParams()
 
   }
   initializeForm(): void {
     // console.log("aa", this.listTache)
+    let statut = ["Initialisé", "Fait", "Inachevé", "Complété"]
+    if (!this.isParent && this.connectedUser.id === this.selectedData?.idResponsable) {
+      statut = ["Initialisé", "Fait"]
+    }
+    if (!this.isParent && this.connectedUser.id === this.selectedData?.idSuperviseur) {
+      statut = ["Inachevé", "Complété"]
+    }
     this.form = this.fb.group({});
     this.formFields = [
       { name: 'tache', label: 'Tache', value: this.selectedData?.tache ?? "", type: 'select', validators: [Validators.required], options: this.listTache.map((tache) => tache.nom) },
@@ -49,11 +63,30 @@ export class AssignationFormComponent {
       { name: 'superviseur', label: 'Superviseur', value: this.selectedData?.superviseur ?? "", type: 'select', validators: [Validators.required], options: this.listUser.map((user) => user.name) },
       { name: 'datelimite', label: 'Date de limite', type: 'date', value: this.selectedData?.datelimite ?? "", validators: [Validators.required] },
       { name: 'dateValidation', label: 'Date de validation', type: 'date', value: this.selectedData?.dateValidation ?? "", validators: [] },
-      { name: 'statut', label: 'Statut', type: 'select', value: this.selectedData?.statut ?? "", validators: [Validators.required], options: ["Initialisé", "Fait", "Inachevé", "Complété"] },
+      { name: 'statut', label: 'Statut', type: 'select', value: this.selectedData?.statut ?? "", validators: [Validators.required], options: statut },
+      { name: 'critere', label: 'Critere de validation', value: this.selectedData?.statut ?? "", type: 'checkbox', validators: [] },
     ];
     this.formFields.forEach((field: any) => {
-      this.form.addControl(field.name, this.fb.control(field.value || '', field.validators));
+      this.form.addControl(
+        field.name,
+        this.fb.control(
+          //field.type === 'checkbox' ? (field.value || []) : (field.value || ''),
+          field.value || '',
+          field.validators
+        )
+      );
     });
+    if (this.action === "view") {
+      this.form.controls['tache'].disable();
+      this.form.controls['responsable'].disable();
+      this.form.controls['superviseur'].disable();
+      this.form.controls['datelimite'].disable();
+      if (this.connectedUser.id !== this.selectedData?.idSuperviseur) {
+        this.form.controls['dateValidation'].disable();
+      }
+    }
+
+    // console.log("ee", this.isParent, this.action)
   }
   getPathParams(): void {
     this.activatedRoute.params?.subscribe(params => {
@@ -66,7 +99,15 @@ export class AssignationFormComponent {
       this.listTache = params['listTache'] ? JSON.parse(params['listTache']) : null;
       this.listUser = params['listUser'] ? JSON.parse(params['listUser']) : null;
       this.listCritere = params['listCritere'] ? JSON.parse(params['listCritere']) : null;
-      this.initializeForm();
+      if (this.selectedData && this.selectedData?.id) {
+        this.validationAssignationService.getAllByAssignation(this.selectedData?.id).subscribe((data) => {
+          this.listValidationAssignation = data;
+          this.selectedCritere = this.listCritere.filter((i: CritereValidation) => this.listValidationAssignation.some((x: ValidationAssignation) => i.id === x.idCritere));
+          this.initializeForm();
+        });
+      } else {
+        this.initializeForm();
+      }
     });
 
   }
@@ -80,12 +121,27 @@ export class AssignationFormComponent {
     const newItem = { ...assignationTache, ...{ id: `${lastId + 1}` } }
     this.assignationService.addAssignation(newItem).subscribe({
       next: (resp) => {
-        // console.log('newItem saved:', resp);
-        alert('Enregistrement effectuée avec succès');
-        this.navigateToList()
+        const validation = this.selectedCritere.map((i: CritereValidation) => {
+          return {
+            id: `${lastId + 1}${i.id}`,
+            idAssignation: String(lastId + 1),
+            idCritere: String(i.id),
+            etat: "en attente",
+          }
+        })
+        this.validationAssignationService.addMultiValidationAssignation(validation).subscribe({
+          next: (resp) => {
+            // console.log('newItem saved:', resp);
+            alert('Enregistrement effectuée avec succès');
+            this.navigateToList()
+          },
+          error: (err) => console.error('Error saving:', err)
+        });
       },
       error: (err) => console.error('Error saving:', err)
     });
+
+
 
   }
   onEdit(assignationTache: Assignation): void {
@@ -117,12 +173,42 @@ export class AssignationFormComponent {
         idResponsable,
         idSuperviseur
       }
+
       if (this.action === "add") {
+
         this.onSave(assignationTache);
-      } else if (this.action === "edit") {
-        this.onEdit(assignationTache);
+      } else if (this.action === "edit" || this.action === "view") {
+        let editvalue: Assignation = assignationTache
+        if (!this.isParent) {
+          editvalue = {
+            statut: this.form.value.statut,
+            datelimite: this.selectedData?.datelimite ? new Date(this.selectedData.datelimite) : new Date(),
+            dateValidation: this.form.value.dateValidation,
+            idTache: this.selectedData?.idTache ?? "",
+            idCreateur: this.selectedData?.idCreateur ?? '',
+            idResponsable: this.selectedData?.idResponsable ?? "",
+            idSuperviseur: this.selectedData?.idSuperviseur ?? ""
+          }
+        }
+        this.onEdit(editvalue);
       }
     }
+  }
+  onSelectCritere(critere: CritereValidation, event: any): void {
+    if (event.target.checked) {
+      this.selectedCritere.push(critere);
+    } else {
+      const index = this.selectedCritere.findIndex((i: any) => i.id === critere.id);
+      console.log("ddd", index)
+      if (index !== -1) {
+        this.selectedCritere.splice(index, 1);
+      }
+    }
+    // console.log("this.selectedCritere", this.selectedCritere)
+  }
+
+  isSelectedCritere(critere: CritereValidation): boolean {
+    return this.selectedCritere.some((selectedCritere: any) => selectedCritere.id === critere.id);
   }
 
 }

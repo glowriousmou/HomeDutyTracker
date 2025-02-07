@@ -151,3 +151,7 @@ ngx-datatable .datatable-body-row.active {
     color: #333;
     /* Couleur du texte principal */
 }
+
+.form-label {
+    color: #007bff;
+}

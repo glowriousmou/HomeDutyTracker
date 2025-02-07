@@ -83,16 +83,24 @@
   ],
   "assignations": [
     {
-      "statut": "Fait",
-      "datelimite": "2025-01-28",
-      "idTache": "2",
+      "statut": "Complété",
+      "datelimite": "2025-02-12T00:00:00.000Z",
+      "dateValidation": "2025-02-07",
+      "idTache": "1",
       "idCreateur": "1",
-      "idResponsable": "3",
-      "idSuperviseur": "5",
+      "idResponsable": "5",
+      "idSuperviseur": "4",
       "id": "1"
     }
   ],
-  "validationAssignation": [],
+  "validationAssignation": [
+    {
+      "id": "11",
+      "idAssignation": "1",
+      "idCritere": "1",
+      "etat": "en attente"
+    }
+  ],
   "critereValidations": [
     {
       "id": "1",
@@ -100,8 +108,8 @@
       "description": "Aucune vaisselle sale dans l’évier, égouttoir vide."
     },
     {
-      "nom": "//Sol propre",
-      "description": " 77 Aucun débris ou trace visible sur le sol.",
+      "nom": "Sol propre",
+      "description": "Aucun débris ou trace visible sur le sol.",
       "id": "2"
     }
   ],
@@ -112,8 +120,8 @@
       "description": " Laver, sécher et ranger la vaisselle après le repas."
     },
     {
-      "nom": "Sortir les poubelles //",
-      "description": " Vider les poubelles et sortir les sacs à l’endroit désigné.//",
+      "nom": "Sortir les poubelles",
+      "description": " Vider les poubelles et sortir les sacs à l’endroit désigné.",
       "id": "2"
     }
   ]

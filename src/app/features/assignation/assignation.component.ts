@@ -15,6 +15,7 @@ import { CommonModule } from '@angular/common';
 import { User } from '@app/interfaces/user';
 import { Tache } from '@app/interfaces/tache';
 import { CritereValidation } from '@app/interfaces/critereValidation';
+import dateFormat from '@app/utils/dateFormat';
 
 
 
@@ -40,7 +41,7 @@ export class AssignationComponent {
     { prop: 'tache', name: 'Tache' },
     { prop: 'responsable', name: 'Responsable' },
     { prop: 'superviseur', name: 'Superviseur' },
-    { prop: 'datelimite', name: 'Date limite' },
+    { prop: 'deadline', name: 'Date limite' },
     { prop: 'statut', name: 'Statut' },
   ];
   messages = {
@@ -103,15 +104,20 @@ export class AssignationComponent {
             createur: createur ? `${createur.prenomUser ?? ''} ${createur.nomUser ?? ''}` : 'Introuvable',
             responsable: responsable ? `${responsable.prenomUser ?? ''} ${responsable.nomUser ?? ''}` : 'Introuvable',
             superviseur: superviseur ? `${superviseur.prenomUser ?? ''} ${superviseur.nomUser ?? ''}` : 'Introuvable',
+            deadline: dateFormat(assignation.datelimite)
 
           };
         });
         this.listData = dataAssignation;
-        this.filteredData = dataAssignation;
+
+        if (!this.isParent) {
+          const connectedUser = localStorage.getItem('connectedUser') ? JSON.parse(localStorage.getItem('connectedUser')!) : null;
+          this.listData = dataAssignation.filter((i: Assignation) => i.idSuperviseur === connectedUser.id || i.idResponsable === connectedUser.id);
+        }
+        this.filteredData = this.listData;
         this.listTache = result.taches;
         this.listUser = result.users.map((user: User) => ({ ...user, ...{ name: `${user.prenomUser ?? ''} ${user.nomUser ?? ''}` } }));
         this.listCritere = result.criteres;
-        console.log('ListData:', this.listData);
       },
       error: (error) => {
         console.error(error);
@@ -129,5 +135,19 @@ export class AssignationComponent {
   }
   ngAfterViewInit() {
     // console.log('ListData after view init:', this.listData);
+  }
+
+  getStatusClass(statut: string): string {
+
+    switch (statut) {
+      case '':
+        return 'Complété';
+      case 'Fait':
+        return 'bg-yellow';
+      case 'Inachevé':
+        return 'bg-red';
+      default:
+        return 'bg-default';
+    }
   }
 }
