@@ -1,6 +1,61 @@
 <app-navbar></app-navbar>
-<div class="d-flex justify-content-center mt-4" style="background-color: 'red'">
-  <div style="width: 700px; height: 400px">
-    <canvas #pieCanvas></canvas>
+<!-- <div
+  class="row d-flexs justify-content-centers"
+  style="background-color: 'red'"
+>
+  <div class="col justify-content-center">
+    <div style="width: 700px; height: 400px; align-items:'center">
+      <canvas #pieCanvas></canvas>
+     </div>
+    </div>
+    <div class="col justify-content-center">
+      <div style="height: 200px">
+        <canvas #barCanvas></canvas>
+      </div>
+    </div>
+  </div> -->
+
+<!-- <div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-8 d-flex justify-content-center">
+      <div style="width: 700px; height: 400px">
+        <canvas id="pieCanvas"></canvas>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center mt-4">
+    <div class="col-md-8 d-flex justify-content-center">
+      <div style="width: 700px; height: 400px">
+        <canvas #barCanvas></canvas>
+      </div>
+    </div>
+  </div>
+</div> -->
+<div class="container mt-4">
+  <h2 class="titlePrimary title text-center">
+    Statuts des assignations par responsable
+  </h2>
+  <div class="col-md-4 col-12 d-flex flex-column align-items-center my-3">
+    <label for="chartFilter" class="mb-2 fw-bold">
+      Filtrez par responsable :
+    </label>
+    <select class="form-select w-100" (change)="onFilterChange($event)">
+      <option value="">Tous</option>
+      <option *ngFor="let user of listUser | async" [value]="user.id">
+        {{ user.name }}
+      </option>
+    </select>
+  </div>
+  <div class="row justify-content-center mt-4" style="">
+    <div class="col-lg-6 d-flex justify-content-center">
+      <div class="chartStyle">
+        <canvas #pieCanvas></canvas>
+      </div>
+    </div>
+    <div class="col-lg-6 d-flex justify-content-center">
+      <div class="chartStyle">
+        <canvas #barCanvas></canvas>
+      </div>
+    </div>
   </div>
 </div>

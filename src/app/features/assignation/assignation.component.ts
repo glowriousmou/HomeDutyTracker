@@ -109,6 +109,7 @@ export class AssignationComponent {
           };
         });
         this.listData = dataAssignation;
+        console.log(" this.listData", this.listData)
 
         if (!this.isParent) {
           const connectedUser = localStorage.getItem('connectedUser') ? JSON.parse(localStorage.getItem('connectedUser')!) : null;

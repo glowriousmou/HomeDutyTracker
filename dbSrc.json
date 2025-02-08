@@ -46,29 +46,6 @@
       "dateNaissance": "2012-01-01",
       "sexe": "M",
       "photo": "assets/avatar/son.jpg"
-    },
-    {
-      "id": "5",
-      "idRole": "Enfant",
-      "prenomUser": "Aminata",
-      "nomUser": "SOW",
-      "email": "aminata@gmail.com",
-      "password": "12345678",
-      "telephone": "55667788",
-      "dateNaissance": "2015-01-01",
-      "sexe": "F",
-      "photo": "assets/avatar/daughter.jpg"
-    },
-    {
-      "prenomUser": "Amira",
-      "nomUser": "Sow",
-      "email": "sa@gmail.com",
-      "telephone": "84526395",
-      "dateNaissance": "2003-05-09",
-      "sexe": "F",
-      "photo": "assets/avatar/daughter.jpg",
-      "id": "6",
-      "idRole": "Enfant"
     }
   ],
   "roles": [
@@ -84,13 +61,59 @@
   "assignations": [
     {
       "statut": "Complété",
-      "datelimite": "2025-02-12T00:00:00.000Z",
-      "dateValidation": "2025-02-07",
+      "datelimite": "2025-02-12",
       "idTache": "1",
       "idCreateur": "1",
-      "idResponsable": "5",
+      "idResponsable": "3",
       "idSuperviseur": "4",
       "id": "1"
+    },
+    {
+      "statut": "Fait",
+      "datelimite": "2025-02-19",
+      "idTache": "2",
+      "idCreateur": "1",
+      "idResponsable": "4",
+      "idSuperviseur": "1",
+      "id": "2"
+    },
+    {
+      "statut": "Complété",
+      "datelimite": "2025-02-21",
+      "idTache": "3",
+      "idCreateur": "1",
+      "idResponsable": "4",
+      "idSuperviseur": "3",
+      "id": "3"
+    },
+    {
+      "statut": "En attente",
+      "datelimite": "2025-02-20T00:00:00.000Z",
+      "dateValidation": null,
+      "idTache": "4",
+      "idCreateur": "1",
+      "idResponsable": "2",
+      "idSuperviseur": "3",
+      "id": "4"
+    },
+    {
+      "statut": "En retard",
+      "datelimite": "2025-02-05T00:00:00.000Z",
+      "dateValidation": null,
+      "idTache": "5",
+      "idCreateur": "5",
+      "idResponsable": "1",
+      "idSuperviseur": "3",
+      "id": "5"
+    },
+    {
+      "id": "6",
+      "statut": "En attente",
+      "datelimite": "2025-02-10",
+      "idTache": "4",
+      "idCreateur": "1",
+      "idResponsable": "4",
+      "idSuperviseur": "2"
     }
   ],
   "validationAssignation": [
@@ -98,6 +121,36 @@
       "id": "11",
       "idAssignation": "1",
       "idCritere": "1",
+      "etat": "en attente"
+    },
+    {
+      "id": "22",
+      "idAssignation": "2",
+      "idCritere": "4",
+      "etat": "en attente"
+    },
+    {
+      "id": "35",
+      "idAssignation": "3",
+      "idCritere": "5",
+      "etat": "en attente"
+    },
+    {
+      "id": "42",
+      "idAssignation": "4",
+      "idCritere": "2",
+      "etat": "en attente"
+    },
+    {
+      "id": "52",
+      "idAssignation": "5",
+      "idCritere": "2",
+      "etat": "en attente"
+    },
+    {
+      "id": "62",
+      "idAssignation": "6",
+      "idCritere": "2",
       "etat": "en attente"
     }
   ],
@@ -108,21 +161,56 @@
       "description": "Aucune vaisselle sale dans l’évier, égouttoir vide."
     },
     {
+      "id": "2",
       "nom": "Sol propre",
-      "description": "Aucun débris ou trace visible sur le sol.",
-      "id": "2"
+      "description": "Aucun débris ou trace visible sur le sol."
+    },
+    {
+      "id": "3",
+      "nom": "Vaisselle rangée",
+      "description": "Assiettes, verres et couverts bien rangés dans les placards."
+    },
+    {
+      "id": "4",
+      "nom": "Poubelles vidées",
+      "description": "Tous les sacs-poubelles ont été sortis et les poubelles nettoyées si nécessaire."
+    },
+    {
+      "id": "5",
+      "nom": "Linge sec et plié",
+      "description": "Les vêtements sont bien séchés et correctement pliés."
+    },
+    {
+      "id": "6",
+      "nom": "Panier à linge vide",
+      "description": "Aucun vêtement sale ne traîne dans le panier à linge."
     }
   ],
   "taches": [
     {
       "id": "1",
       "nom": "Faire la vaisselle",
-      "description": " Laver, sécher et ranger la vaisselle après le repas."
+      "description": "Laver, sécher et ranger la vaisselle après le repas."
     },
     {
+      "id": "2",
       "nom": "Sortir les poubelles",
-      "description": " Vider les poubelles et sortir les sacs à l’endroit désigné.",
-      "id": "2"
+      "description": "Vider les poubelles et sortir les sacs à l’endroit désigné."
+    },
+    {
+      "id": "3",
+      "nom": "Faire la lessive",
+      "description": "Laver, sécher et plier le linge."
+    },
+    {
+      "id": "4",
+      "nom": "Nettoyer la salle de bain",
+      "description": "Laver le lavabo, la douche, les toilettes et passer un coup de serpillière."
+    },
+    {
+      "id": "5",
+      "nom": "Nettoyer le salon",
+      "description": "Remettre en place les objets, balayer et passer un coup de chiffon."
     }
   ]
 }

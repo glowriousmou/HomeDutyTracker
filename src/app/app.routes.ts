@@ -29,7 +29,7 @@ export const routes: Routes = [
     { path: FORM_TASK_PATH + "/:action", component: TacheFormComponent, canActivate: [authenticationGuard] },
     { path: LIST_CRITERE_PATH, component: CritereValidationComponent, canActivate: [authenticationGuard] },
     { path: FORM_CRITERE_PATH + "/:action", component: CritereValidationFormComponent, canActivate: [authenticationGuard] },
-    { path: "", component: DashboardComponent, canActivate: [authenticationGuard] },
+    { path: "", redirectTo: DASHBOARD_PATH, pathMatch: 'full' },
     { path: '**', component: NotFoundComponent, canActivate: [authenticationGuard] },
     // { path: '**', redirectTo: NOT_FOUND_PATH, canActivate: [authenticationGuard] },
 ];

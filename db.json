@@ -46,6 +46,17 @@
       "dateNaissance": "2012-01-01",
       "sexe": "M",
       "photo": "assets/avatar/son.jpg"
+    },
+    {
+      "prenomUser": "Zeinabou",
+      "nomUser": "Sow",
+      "email": "zeinabou@sow.com",
+      "telephone": "84150236",
+      "dateNaissance": "2025-02-20",
+      "sexe": "F",
+      "photo": "assets/avatar/daughter.jpg",
+      "id": "5",
+      "idRole": "Enfant"
     }
   ],
   "roles": [
@@ -60,9 +71,8 @@
   ],
   "assignations": [
     {
-      "statut": "Complété",
+      "statut": "En retard",
       "datelimite": "2025-02-12T00:00:00.000Z",
-      "dateValidation": "2025-02-07",
       "idTache": "1",
       "idCreateur": "1",
       "idResponsable": "3",
@@ -70,8 +80,8 @@
       "id": "1"
     },
     {
-      "statut": "Fait",
-      "datelimite": "2025-02-15T00:00:00.000Z",
+      "statut": "Complété",
+      "datelimite": "2025-02-19",
       "idTache": "2",
       "idCreateur": "1",
       "idResponsable": "4",
@@ -80,18 +90,16 @@
     },
     {
       "statut": "Complété",
-      "datelimite": "2025-02-10T00:00:00.000Z",
-      "dateValidation": "2025-02-07",
+      "datelimite": "2025-02-21",
       "idTache": "3",
-      "idCreateur": "2",
+      "idCreateur": "1",
       "idResponsable": "4",
       "idSuperviseur": "3",
       "id": "3"
     },
     {
-      "statut": "En attente",
+      "statut": "Complété",
       "datelimite": "2025-02-20T00:00:00.000Z",
-      "dateValidation": null,
       "idTache": "4",
       "idCreateur": "1",
       "idResponsable": "2",
@@ -116,6 +124,15 @@
       "idCreateur": "1",
       "idResponsable": "4",
       "idSuperviseur": "2"
+    },
+    {
+      "id": "7",
+      "statut": "En attente",
+      "datelimite": "2025-02-19",
+      "idTache": "6",
+      "idCreateur": "1",
+      "idResponsable": "5",
+      "idSuperviseur": "2"
     }
   ],
   "validationAssignation": [
@@ -126,15 +143,33 @@
       "etat": "en attente"
     },
     {
-      "id": "62",
-      "idAssignation": "6",
+      "id": "22",
+      "idAssignation": "2",
+      "idCritere": "4",
+      "etat": "en attente"
+    },
+    {
+      "id": "35",
+      "idAssignation": "3",
+      "idCritere": "5",
+      "etat": "en attente"
+    },
+    {
+      "id": "42",
+      "idAssignation": "4",
       "idCritere": "2",
       "etat": "en attente"
     },
     {
-      "id": "66",
+      "id": "52",
+      "idAssignation": "5",
+      "idCritere": "2",
+      "etat": "en attente"
+    },
+    {
+      "id": "62",
       "idAssignation": "6",
-      "idCritere": "6",
+      "idCritere": "2",
       "etat": "en attente"
     }
   ],
@@ -168,6 +203,11 @@
       "id": "6",
       "nom": "Panier à linge vide",
       "description": "Aucun vêtement sale ne traîne dans le panier à linge."
+    },
+    {
+      "nom": "sss //",
+      "description": "aa //",
+      "id": "7"
     }
   ],
   "taches": [
@@ -195,6 +235,11 @@
       "id": "5",
       "nom": "Nettoyer le salon",
       "description": "Remettre en place les objets, balayer et passer un coup de chiffon."
+    },
+    {
+      "nom": "aa88",
+      "description": "dd88",
+      "id": "6"
     }
   ]
 }
